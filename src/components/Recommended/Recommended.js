@@ -4,14 +4,15 @@ import './recommended.css'
 const Recommended = (props) => {
     const data = useSelector(state => state.data)
     const { addBookmark } = props;
-
+    var counter = 0;
     return (
         <main className="recommended">
             <h2 className="title">Recommended for you</h2>
             {data.length === 0 ? <p className="not-found">No Recommended Item Found</p> :
                 <div className="boxes">
                     {data.map((ele, index) => {
-                        if (ele.isTrending === false)
+                        if (ele.isTrending === false) {
+                            counter++;
                             return (
                                 <div className="box" key={ele.title}>
                                     <img src={`../../../.${ele.thumbnail.regular.large}`} alt={`${ele.title} picture`} />
@@ -35,7 +36,9 @@ const Recommended = (props) => {
                                     <h2 className="title">{ele.title}</h2>
                                 </div>
                             )
+                        }
                     })}
+                    {counter === 0 ? <p className="not-found">No Recommended Item Found</p> : ''}
                 </div>}
         </main>
     )

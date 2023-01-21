@@ -66,6 +66,7 @@
     align-items: center;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 900;
 }
 
 .swiper-slide .bookmark:hover {

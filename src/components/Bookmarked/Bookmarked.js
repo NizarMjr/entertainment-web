@@ -5,14 +5,16 @@ import './bookmarked.css'
 const Bookmarked = (props) => {
     const data = useSelector(state => state.data);
     const { addBookmark } = props;
-
+    var counter = 0;
+    var counter1 = 0;
     return (
         <main className="bookmarked container">
             <h2 className="title">Boukmarked Movies</h2>
             {data.length === 0 ? <p className="not-found">No Bookmarked Movies Found</p> :
                 <div className="boxes">
                     {data.map((ele, index) => {
-                        if (ele.isBookmarked === true && ele.category === 'Movie')
+                        if (ele.isBookmarked === true && ele.category === 'Movie') {
+                            counter++;
                             return (
                                 <div className="box" key={ele.title}>
                                     <img src={`../../../.${ele.thumbnail.regular.large}`} alt={`${ele.title} picture`} />
@@ -34,13 +36,16 @@ const Bookmarked = (props) => {
                                     <h2 className="title">{ele.title}</h2>
                                 </div>
                             )
+                        }
                     })}
+                    {counter === 0 ? <p className="not-found">No Bookmarked Movies Found</p> : ""}
                 </div>}
             <h2 className="title">Boukmarked TV Series</h2>
             {data.length === 0 ? <p className="not-found">No Bookmarked Series Found</p> :
                 <div className="boxes">
                     {data.map((ele, index) => {
-                        if (ele.isBookmarked === true && ele.category === "TV Series")
+                        if (ele.isBookmarked === true && ele.category === "TV Series") {
+                            counter1++;
                             return (
                                 <div className="box" key={ele.title}>
                                     <img src={`../../../.${ele.thumbnail.regular.large}`} alt={`${ele.title} picture`} />
@@ -62,7 +67,9 @@ const Bookmarked = (props) => {
                                     <h2 className="title">{ele.title}</h2>
                                 </div>
                             )
+                        }
                     })}
+                    {counter1 === 0 ? <p className="not-found">No Bookmarked Series Found</p> : ""}
                 </div>}
         </main>
     )

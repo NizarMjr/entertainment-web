@@ -29,7 +29,7 @@ main {
 
 main .boxes .box .title {
   position: absolute;
-  bottom: -3rem;
+  bottom: -3.5rem;
   left: 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -95,6 +95,10 @@ main .boxes .box .title {
   main .boxes .box .info {
     left: 0;
     bottom: -2.5rem;
+  }
+
+  main .boxes .box .title {
+    left: 0;
   }
 
   main .boxes .box .info span {

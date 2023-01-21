@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useParams } from 'react-router-dom';
 import './App.css';
 import Content from './components/Content/Content';
 import FilterBar from './components/FilterBar/FilterBar';
@@ -23,7 +23,7 @@ function App() {
   const addBookmark = (index) => {
     if (document.getElementById(index).getAttribute('fill') === 'none') {
       document.getElementById(index).setAttribute('fill', '#FFF');
-      document.getElementById(index).setAttribute('stroke', '#000');
+      document.getElementById(index).setAttribute('stroke', '#FFF');
     }
     else {
       document.getElementById(index).setAttribute('fill', 'none')

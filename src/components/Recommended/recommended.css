@@ -55,7 +55,7 @@
     align-items: center;
     cursor: pointer;
     transition: 0.3s;
-    z-index: 1000;
+    z-index: 900;
 }
 
 .box .bookmark:hover {
