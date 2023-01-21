@@ -14,7 +14,7 @@ const Trending = (props) => {
                         {data.map((ele, index) => {
                             if (ele.isTrending === true)
                                 return (
-                                    <div className="box" key={index}>
+                                    <div className="box" key={ele.title}>
                                         <SwiperSlide>
                                             <img src={`../../../.${ele.thumbnail.trending.large}`} alt={`${ele.title} picture`} />
                                             <div className="bookmark" onClick={() => addBookmark(`trend${index}`)}>
