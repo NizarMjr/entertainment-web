@@ -1,0 +1,26 @@
+.result {
+    margin-top: 3rem;
+    position: absolute;
+    left: 9rem;
+}
+
+@media (max-width:768px) {
+    .result {
+        width: calc(100% - 75px);
+        left: 0;
+        right: 0;
+        top: 6rem;
+        margin: 2rem auto;
+    }
+
+
+}
+
+@media (max-width:551px) {
+    .result {
+        top: 3rem;
+        width: calc(100% - 20px);
+    }
+
+
+}

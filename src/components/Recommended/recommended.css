@@ -1,0 +1,158 @@
+.recommended .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.recommended .title {
+    font-weight: 300;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+}
+
+.boxes .box {
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+}
+
+.boxes .box img {
+    position: relative;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .5);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.box .bookmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #10141e80;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.box .bookmark:hover {
+    background-color: white;
+}
+
+.box .bookmark svg {
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+.box .bookmark:hover svg path {
+    stroke: black;
+}
+
+.box .play {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 0;
+    background-color: hsla(0, 0%, 100%, .25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    transition: 0.4s;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+
+.box:hover .play {
+    visibility: visible;
+    opacity: 1;
+    width: 90px;
+}
+
+.play:hover svg path {
+    fill: #fc4747;
+}
+
+.play button {
+    background-color: transparent;
+    font-size: 1.1rem;
+    color: white;
+    font-family: inherit;
+    border: none;
+}
+
+.box .info {
+    margin: 1rem 0 0.5rem;
+    left: 1rem;
+    font-weight: 300;
+    width: calc(100% / 1.5);
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    pointer-events: none;
+    opacity: .75;
+    position: absolute;
+    bottom: -2rem;
+    left: 1rem;
+}
+
+.box .info span {
+    margin-right: .6rem;
+}
+
+.box .info img {
+    margin-right: .5rem;
+}
+
+.info .dot {
+    margin-bottom: .4rem;
+}
+
+.box .title {
+    position: absolute;
+    bottom: -3rem;
+    left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    pointer-events: none;
+}
+
+@media (max-width:551px) {
+
+    .box:hover .play {
+        width: 70px !important;
+    }
+
+    .box .play button {
+        font-size: .8rem;
+    }
+}

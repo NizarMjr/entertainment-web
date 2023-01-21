@@ -1,0 +1,11 @@
+.content {
+    margin: 1rem auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width:551px) {
+    .content {
+        width: calc(100% / 1.5);
+    }
+}

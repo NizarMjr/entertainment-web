@@ -1,0 +1,6 @@
+export const Types = {
+    GET_ALL_DATA: 'GET_ALL_DATA',
+    SET_ALL_DATA: 'SET_ALL_DATA',
+    RESEARCHED_DATA: 'RESEARCHED_DATA',
+    FETCH: 'FETCH',
+}

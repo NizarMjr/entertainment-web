@@ -1,0 +1,47 @@
+.series {
+    margin-top: 3rem;
+    position: absolute;
+    left: 9rem;
+    width: 100%;
+}
+
+.series .title {
+    font-weight: 300;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+}
+
+.series .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+@media (min-width:769px) {
+    .series {
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width:768px) {
+    .series {
+        width: calc(100% - 75px);
+        left: 0;
+        right: 0;
+        top: 6rem;
+        margin: 2rem auto;
+    }
+
+
+}
+
+@media (max-width:551px) {
+    .series {
+        top: 3rem;
+        width: calc(100% - 20px);
+    }
+
+
+}

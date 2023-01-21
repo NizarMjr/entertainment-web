@@ -1,0 +1,156 @@
+.trending .title {
+    font-weight: 300;
+    font-size: 2.2rem;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+
+}
+
+.swiper-slide {
+    position: relative;
+    border-radius: 5px;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.swiper-slide {
+    width: auto;
+    cursor: ew-resize;
+    flex-shrink: 0;
+    width: calc(100% / 2.5);
+    height: 100%;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.swiper-slide::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .5);
+    transition: 0.3s;
+}
+
+.swiper-slide:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide .bookmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #10141e80;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.swiper-slide .bookmark:hover {
+    background-color: white;
+}
+
+.swiper-slide .bookmark svg {
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+.swiper-slide .bookmark:hover svg path {
+    stroke: black;
+}
+
+.swiper-slide .play {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 0;
+    background-color: hsla(0, 0%, 100%, .25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    transition: 0.4s;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+
+.swiper-slide:hover .play {
+    visibility: visible;
+    opacity: 1;
+    width: 90px;
+}
+
+.play:hover svg path {
+    fill: #fc4747;
+}
+
+.play button {
+    background-color: transparent;
+    font-size: 1.1rem;
+    color: white;
+    font-family: inherit;
+    border: none;
+}
+
+.swiper-slide .info {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 1rem;
+    font-weight: 500;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    pointer-events: none;
+    opacity: .75;
+}
+
+.swiper-slide .title {
+    position: absolute;
+    bottom: .5rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    pointer-events: none;
+}
+
+@media (max-width:551px) {
+    .swiper-slide {
+        width: calc(100% / 1.5);
+    }
+
+    .trending .title {
+        margin-top: 2rem;
+        font-size: 1rem;
+    }
+
+}
